@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Categories</title>
+</head>
+<body>
+  <h1>Product Categories</h1>
+    <% if (categories.length > 0) { %>
+      <ul>
+        <% categories.forEach(category => { %>
+          <li>
+            <a href="/categories/<%= category.id %>">
+              <%= category.name %>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+    <% }  else { %>
+      <p>No categories found. <a href="/categories/new">Add one?</a></p>
+    <% } %>
+</body>
+</html>
