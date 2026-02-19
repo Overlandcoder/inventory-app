@@ -1,0 +1,18 @@
+<h1><%= category.name %></h1>
+<p><%= category.description %></p>
+
+<h3>Products in this category:</h3>
+<% if (products.length > 0) { %>
+  <ul>
+    <% products.forEach(product => { %>
+      <li>
+        <a href="products/<%= product.id %>"><%= product.name %></a>
+        - <%= product.price %>
+      </li>
+    <% }) %>
+  </ul>
+<% } else { %>
+  <p>No products found in this category.</p>
+<% } %>
+
+<a href="/categories">Back to all categories</a>
